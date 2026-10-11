@@ -1,0 +1,1119 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="https://uploads.onecompiler.io/44sc8s8uy/44wp38bcd/Elvora%20Fashions%20Gold%20Emblem.png">
+<title>ELVORA | Men's Accessories</title>
+
+<style>
+:root {
+  --black:#101010;
+  --dark:#1b1b1b;
+  --gold:#d7b46a;
+  --cream:#f7f4ed;
+  --white:#fff;
+  --muted:#777;
+  --border:#e5dfd4;
+  --font-sans:"Aptos","Segoe UI","Helvetica Neue",var(--font-sans);
+  --font-serif:"Palatino Linotype","Book Antiqua",Palatino,var(--font-serif);
+}
+
+* { box-sizing:border-box; margin:0; padding:0; }
+
+html { scroll-behavior:smooth; scroll-padding-top:85px; }
+
+body {
+  font-family:var(--font-sans);
+  background:var(--cream);
+  color:var(--black);
+  line-height:1.6;
+}
+
+button,input,select,textarea { font:inherit; }
+button { cursor:pointer; }
+a { color:inherit; text-decoration:none; }
+
+.announcement {
+  text-align:center;
+  background:var(--gold);
+  padding:8px;
+  font-size:11px;
+  letter-spacing:2px;
+  font-weight:bold;
+}
+
+header {
+  position:sticky;
+  top:0;
+  z-index:20;
+  background:var(--black);
+  color:white;
+}
+
+.navbar {
+  max-width:1250px;
+  margin:auto;
+  padding:15px 5%;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:10px;
+}
+
+.logo {
+  align-self:flex-end;
+  font-family:var(--font-serif);
+  color:var(--gold);
+  font-size:clamp(42px,6vw,64px);
+  letter-spacing:5px;
+  font-weight:bold;
+  text-align:right;
+}
+
+.logo small {
+  display:block;
+  color:white;
+  font:9px var(--font-sans);
+  letter-spacing:2px;
+}
+
+nav { display:flex; gap:22px; font-size:13px; }
+nav a:hover { color:var(--gold); }
+
+.navbar .logo {
+  align-self:flex-start;
+  font-size:clamp(32px,4vw,46px);
+  text-align:left;
+}
+
+.cart-button {
+  padding:10px 14px;
+  background:transparent;
+  color:var(--gold);
+  border:1px solid var(--gold);
+}
+
+.cart-button:hover {
+  background:var(--gold);
+  color:var(--black);
+}
+
+.hero {
+  min-height:560px;
+  padding:70px 8%;
+  display:flex;
+  align-items:center;
+  color:white;
+  background:
+    linear-gradient(90deg,rgba(0,0,0,.88),rgba(0,0,0,.35)),
+    url("https://images.unsplash.com/photo-1516257984-b1b4d707412e?auto=format&fit=crop&w=1800&q=85")
+    center/cover no-repeat;
+}
+
+.hero-content { max-width:620px; }
+
+.eyebrow {
+  color:var(--gold);
+  font-size:12px;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  margin-bottom:12px;
+}
+
+.hero h1 {
+  font:normal clamp(43px,7vw,78px)/1.1 var(--font-serif);
+  margin-bottom:20px;
+}
+
+.hero h1 span { color:var(--gold); font-style:italic; }
+
+.hero p { max-width:470px; color:#ddd; margin-bottom:28px; }
+
+.primary-button {
+  display:inline-block;
+  padding:13px 22px;
+  border:1px solid var(--gold);
+  background:var(--gold);
+  color:var(--black);
+  font-weight:bold;
+  font-size:12px;
+  letter-spacing:1px;
+  text-transform:uppercase;
+}
+
+.primary-button:hover {
+  background:transparent;
+  color:var(--gold);
+}
+
+.benefits {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:15px;
+  background:white;
+  padding:24px 5%;
+  text-align:center;
+  border-bottom:1px solid var(--border);
+}
+
+.benefits strong { display:block; font-size:13px; }
+.benefits span { color:var(--muted); font-size:12px; }
+
+section { padding:70px 5%; }
+
+.section-heading { text-align:center; margin-bottom:32px; }
+.section-heading h2 { font:normal clamp(30px,4vw,43px) var(--font-serif); }
+.section-heading p { color:var(--muted); font-size:14px; margin-top:8px; }
+
+.shop-controls { max-width:1250px; margin:0 auto 25px; }
+
+.search-sort { display:flex; gap:12px; margin-bottom:20px; }
+
+.search-sort input,.search-sort select {
+  min-width:0;
+  flex:1;
+  padding:12px;
+  border:1px solid var(--border);
+  background:white;
+}
+
+.category-list {
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:8px;
+}
+
+.category-button {
+  border:1px solid #d8d0c4;
+  padding:9px 13px;
+  background:transparent;
+  font-size:12px;
+}
+
+.category-button:hover,.category-button.active {
+  background:var(--black);
+  color:var(--gold);
+  border-color:var(--black);
+}
+
+.product-grid {
+  max-width:1250px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:22px 17px;
+}
+
+.product-card {
+  min-width:0;
+  background:white;
+  border:1px solid #eee8df;
+  transition:.2s;
+}
+
+.product-card:hover {
+  transform:translateY(-4px);
+  box-shadow:0 10px 25px #00000010;
+}
+
+.product-image {
+  position:relative;
+  aspect-ratio:4/4.5;
+  background:#eee9e1;
+  overflow:hidden;
+}
+
+.product-image img {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  transition:transform .3s;
+}
+
+.product-card:hover .product-image img { transform:scale(1.04); }
+
+.product-tag {
+  position:absolute;
+  top:10px;
+  left:10px;
+  padding:5px 8px;
+  background:var(--gold);
+  font-size:10px;
+  text-transform:uppercase;
+}
+
+.product-info { padding:14px; }
+.product-category { color:var(--muted); font-size:10px; letter-spacing:1px; text-transform:uppercase; }
+.product-info h3 { font:normal 17px var(--font-serif); margin:5px 0; }
+.product-description { color:var(--muted); font-size:12px; min-height:38px; margin-bottom:12px; }
+
+.product-bottom {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:8px;
+}
+
+.price { font-weight:bold; font-size:15px; }
+
+.add-button {
+  background:var(--black);
+  color:var(--gold);
+  border:1px solid var(--black);
+  padding:9px 10px;
+  font-size:11px;
+}
+
+.add-button:hover { background:var(--gold); color:var(--black); }
+
+.empty-message {
+  grid-column:1/-1;
+  text-align:center;
+  padding:35px;
+  color:var(--muted);
+}
+
+.promo {
+  text-align:center;
+  background:var(--black);
+  color:white;
+  padding:60px 5%;
+}
+
+.promo h2 { font:normal clamp(28px,4vw,42px) var(--font-serif); margin-bottom:12px; }
+.promo p { color:#ccc; max-width:600px; margin:0 auto 22px; }
+
+.about-grid {
+  max-width:1000px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+  align-items:center;
+}
+
+.about-grid img { width:100%; max-height:430px; object-fit:cover; }
+.about-copy h2 { font:normal 38px var(--font-serif); margin-bottom:15px; }
+.about-copy p { color:#666; font-size:14px; margin-bottom:15px; }
+
+.cart-section { background:#eee7dc; }
+
+.cart-container {
+  max-width:900px;
+  margin:auto;
+  padding:25px;
+  background:white;
+}
+
+.cart-row {
+  display:grid;
+  grid-template-columns:1fr auto auto auto;
+  align-items:center;
+  gap:14px;
+  padding:15px 0;
+  border-bottom:1px solid var(--border);
+}
+
+.cart-row h4 { font-size:14px; }
+.cart-row small { color:var(--muted); }
+
+.quantity-control { display:flex; align-items:center; gap:9px; }
+
+.quantity-control button,.remove-button {
+  padding:5px 10px;
+  border:1px solid var(--border);
+  background:white;
+}
+
+.remove-button { color:#a33; }
+
+.cart-total { text-align:right; padding-top:20px; font-weight:bold; font-size:22px; }
+.cart-note { text-align:right; color:var(--muted); font-size:12px; margin-top:6px; }
+#print-bill { display:none; }
+
+.checkout-form { border-top:1px solid var(--border); margin-top:25px; padding-top:25px; }
+.checkout-form h3 { font:normal 25px var(--font-serif); margin-bottom:15px; }
+
+.form-grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+}
+
+.form-grid input,.form-grid textarea {
+  width:100%;
+  padding:12px;
+  border:1px solid var(--border);
+}
+
+.form-grid textarea { min-height:85px; grid-column:1/-1; }
+.billing-section { margin-top:20px; }
+.billing-section h4 { font-size:15px; margin-bottom:8px; }
+.billing-same-label { display:flex; align-items:center; gap:8px; margin-bottom:12px; font-size:13px; }
+.billing-same-label input { accent-color:var(--black); }
+.billing-fields[hidden] { display:none; }
+.checkout-form .primary-button { margin-top:15px; }
+.demo-warning { color:#855c20; font-size:12px; margin-top:12px; }
+
+.contact-section { background:white; }
+
+.contact-card {
+  max-width:700px;
+  margin:auto;
+  padding:30px;
+  border:1px solid var(--border);
+  text-align:center;
+}
+
+.contact-card p { color:var(--muted); margin:10px 0; }
+.contact-card a { text-decoration:underline; color:#856522; }
+
+footer {
+  background:var(--black);
+  color:white;
+  text-align:center;
+  padding:35px 5%;
+}
+
+footer p { color:#bbb; font-size:12px; margin-top:5px; }
+
+.toast {
+  display:none;
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  z-index:50;
+  max-width:calc(100% - 40px);
+  padding:14px 20px;
+  background:var(--black);
+  color:var(--gold);
+  box-shadow:0 5px 20px #0002;
+  font-size:13px;
+}
+
+@media print {
+  body * { visibility:hidden !important; }
+  #print-bill, #print-bill * { visibility:visible !important; }
+  #print-bill {
+    display:block !important;
+    position:absolute;
+    inset:0 auto auto 0;
+    width:100%;
+    padding:24px;
+    background:#fff;
+    color:#111;
+    font-family:Arial,sans-serif;
+  }
+  #print-bill h1 { font-size:28px; letter-spacing:4px; }
+  #print-bill .bill-subtitle { margin:4px 0 22px; color:#555; }
+  #print-bill .bill-details { margin:16px 0; line-height:1.7; }
+  #print-bill table { width:100%; border-collapse:collapse; margin:20px 0; }
+  #print-bill th, #print-bill td {
+    padding:9px;
+    border-bottom:1px solid #ccc;
+    text-align:left;
+  }
+  #print-bill th:last-child, #print-bill td:last-child { text-align:right; }
+  #print-bill .bill-total { text-align:right; font-size:18px; font-weight:bold; }
+}
+
+@media(max-width:950px) {
+  .product-grid { grid-template-columns:repeat(3,minmax(0,1fr)); }
+  nav { gap:12px; }
+}
+
+@media(max-width:680px) {
+  .navbar { flex-direction:column; flex-wrap:nowrap; padding:12px 5%; }
+  .navbar .logo { font-size:clamp(30px,8vw,40px); }
+  nav { order:0; width:100%; justify-content:center; overflow-x:auto; padding:8px 0; }
+  nav a { white-space:nowrap; }
+  .cart-button { margin-left:0; }
+  .hero { min-height:450px; padding:50px 7%; }
+  .benefits { grid-template-columns:1fr; gap:18px; }
+  section { padding:50px 5%; }
+  .product-grid { grid-template-columns:repeat(2,minmax(0,1fr)); gap:13px; }
+  .product-info { padding:10px; }
+  .product-info h3 { font-size:15px; }
+  .product-description { font-size:11px; }
+  .price { font-size:13px; }
+  .add-button { padding:8px; font-size:10px; }
+  .search-sort { flex-direction:column; }
+  .about-grid { grid-template-columns:1fr; gap:25px; }
+  .cart-container { padding:14px; }
+  .cart-row { grid-template-columns:1fr auto; gap:10px; }
+  .cart-row .quantity-control { grid-column:1; }
+  .cart-row .line-total { grid-column:2; grid-row:1; }
+  .cart-row .remove-button { grid-column:2; grid-row:2; }
+  .form-grid { grid-template-columns:1fr; }
+  .form-grid textarea { grid-column:auto; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="announcement">
+  ELVORA • MEN'S ACCESSORIES • DEFINE YOUR STYLE
+</div>
+
+<header>
+  <div class="navbar">
+    <a class="logo" href="#home">
+      ELVORA
+      <small>YOUR STYLE. YOUR SIGNATURE.</small>
+    </a>
+
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#shop">Shop</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <button class="cart-button" onclick="goToCart()">
+      BAG (<span id="cart-count">0</span>)
+    </button>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <div class="eyebrow">The men's collection</div>
+      <h1>Own Your<br><span>Style.</span></h1>
+      <p>
+        Discover watches, rings, sunglasses, bags and
+        everyday essentials made to complete your look.
+      </p>
+      <a class="primary-button" href="#shop">Shop the Collection</a>
+    </div>
+  </section>
+
+  <div class="benefits">
+    <div>
+      <strong>MODERN ACCESSORIES</strong>
+      <span>Made for your personal style</span>
+    </div>
+    <div>
+      <strong>EVERYDAY ESSENTIALS</strong>
+      <span>From casual to smart looks</span>
+    </div>
+    <div>
+      <strong>YOUR STYLE, YOUR RULES</strong>
+      <span>Find your favourite pieces</span>
+    </div>
+  </div>
+
+  <section id="shop">
+    <div class="section-heading">
+      <div class="eyebrow">Explore the collection</div>
+      <h2>Men's Accessories</h2>
+      <p>Find your everyday essentials at ELVORA.</p>
+    </div>
+
+    <div class="shop-controls">
+      <div class="search-sort">
+        <input id="search-input" type="search"
+          placeholder="Search watches, rings, caps..."
+          aria-label="Search products">
+
+        <select id="sort-select" aria-label="Sort products">
+          <option value="featured">Featured products</option>
+          <option value="low-high">Price: Low to High</option>
+          <option value="high-low">Price: High to Low</option>
+          <option value="name">Name: A to Z</option>
+        </select>
+      </div>
+
+      <div class="category-list" id="category-list">
+        <button class="category-button active" data-category="All">All</button>
+        <button class="category-button" data-category="Watches">Watches</button>
+        <button class="category-button" data-category="Sunglasses">Sunglasses</button>
+        <button class="category-button" data-category="Rings">Rings</button>
+        <button class="category-button" data-category="Wristbands">Wristbands</button>
+        <button class="category-button" data-category="Caps">Caps</button>
+        <button class="category-button" data-category="Shoes">Shoes</button>
+        <button class="category-button" data-category="Football Jerseys">Football Jerseys</button>
+        <button class="category-button" data-category="Belts">Belts</button>
+        <button class="category-button" data-category="Wallets">Wallets</button>
+        <button class="category-button" data-category="Bags">Bags</button>
+        <button class="category-button" data-category="Tech">Tech</button>
+        <button class="category-button" data-category="Other">Other</button>
+      </div>
+    </div>
+
+    <div class="product-grid" id="product-grid"></div>
+  </section>
+
+  <div class="promo">
+    <div class="eyebrow">The finishing touch</div>
+    <h2>Make Every Detail Count.</h2>
+    <p>
+      Build your own look with accessories that match your personality.
+      Simple, classic or sporty — find your style at ELVORA.
+    </p>
+    <a class="primary-button" href="#shop">Explore Products</a>
+  </div>
+
+  <section id="about">
+    <div class="about-grid">
+      <img
+        src="https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=900&q=80"
+        alt="Men's accessories"
+        loading="lazy">
+
+      <div class="about-copy">
+        <div class="eyebrow">About our brand</div>
+        <h2>Designed Around Your Style.</h2>
+        <p>
+          ELVORA is a men's accessories storefront concept for
+          people who want to express their style through the details.
+        </p>
+        <p>
+          Discover watches, jewellery, sunglasses, wallets,
+          bags and useful everyday tech accessories in one place.
+        </p>
+        <a class="primary-button" href="#shop">Shop Now</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="cart-section" id="cart">
+    <div class="section-heading">
+      <div class="eyebrow">Your selected items</div>
+      <h2>Shopping Bag</h2>
+      <p>Check your items before continuing.</p>
+    </div>
+
+    <div class="cart-container">
+      <div id="cart-items"></div>
+
+      <div class="cart-total">
+        Total: <span id="cart-total">₹0</span>
+      </div>
+
+      <p class="cart-note">
+        Sample prices only. Delivery charges are not included.
+      </p>
+
+      <button class="primary-button" type="button" onclick="printBill()">
+        Print Bill
+      </button>
+      <div id="print-bill"></div>
+
+      <form class="checkout-form" id="checkout-form">
+        <h3>Demo Checkout</h3>
+
+        <div class="form-grid">
+          <input id="customer-name" placeholder="Full name" required>
+          <input id="customer-phone" type="tel" placeholder="Phone number" required>
+          <input id="customer-email" type="email" placeholder="Email address" required>
+          <input id="customer-city" placeholder="City / Town" required>
+          <textarea id="customer-address" placeholder="Delivery address" required></textarea>
+        </div>
+
+        <div class="billing-section">
+          <h4>Billing address</h4>
+          <label class="billing-same-label">
+            <input id="billing-same" type="checkbox" checked>
+            Same as delivery address
+          </label>
+          <div class="form-grid billing-fields" id="billing-fields" hidden>
+            <input id="billing-address" placeholder="Billing street address">
+            <input id="billing-city" placeholder="Billing city / town">
+            <input id="billing-postal" inputmode="numeric" placeholder="Billing postal code">
+          </div>
+        </div>
+
+        <button class="primary-button" type="submit">Place Demo Order</button>
+
+        <p class="demo-warning">
+          This is a demonstration checkout. It does not send orders,
+          store customer details or accept payments.
+        </p>
+      </form>
+    </div>
+  </section>
+
+  <section class="contact-section" id="contact">
+    <div class="section-heading">
+      <div class="eyebrow">Get in touch</div>
+      <h2>Contact ELVORA</h2>
+      <p>Questions about our collection? Contact us.</p>
+    </div>
+
+    <div class="contact-card">
+      <h3>Let's Connect</h3>
+      <p>Replace the example contact details with your real business details.</p>
+      <p>Email: <a href="mailto:rihaneeeeyyyy@gmail.com">rihaneeeeyyyy@gmail.com</a></p>
+      <p>Phone: <a href="tel:9846378205">9846378205</a></p>
+      <p>Instagram: @elvora.fashions</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="logo">ELVORA</div>
+  <p>Your Style. Your Signature.</p>
+  <p>Men's Accessories Store</p>
+  <p>© <span id="year"></span> ELVORA. All rights reserved.</p>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+const products = [
+  {
+    id:1, name:"Classic Black Watch", cat:"Watches", price:1299,
+    desc:"A classic everyday wristwatch.",
+    img:"https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    id:2, name:"Sport Digital Watch", cat:"Watches", price:999,
+    desc:"Sporty style for everyday wear.",
+    img:"https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    id:3, name:"Black Sunglasses", cat:"Sunglasses", price:599,
+    desc:"Classic frames for a bold look.",
+    img:"https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    id:4, name:"Silver Statement Ring", cat:"Rings", price:249,
+    desc:"A simple silver-tone ring.",
+    img:"https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    id:7, name:"Beaded Wristband", cat:"Wristbands", price:199,
+    desc:"Relaxed style for everyday use.",
+    img:"https://uploads.onecompiler.io/44sc8s8uy/1791524770482/Order%20Details%20-%20Poshmark.jpg"
+  },
+  {
+    id:36, name:"Wristband", cat:"Wristbands", price:199,
+    desc:"A casual wristband for everyday style.",
+    img:"https://uploads.onecompiler.io/44sc8s8uy/1791524764925/319333429846520348.jpg"
+  },
+  {
+    id:8, name:"Classic Baseball Cap", cat:"Caps", price:399,
+    desc:"A casual essential for weekends.",
+    img:"https://images.unsplash.com/photo-1588850561407-ed78c282e89b?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    id:9, name:"Classic Leather Belt", cat:"Belts", price:499,
+    desc:"A versatile belt for everyday outfits.",
+    img:"https://uploads.onecompiler.io/44sc8s8uy/1791523639279/PU%20Leather%20Belt%20Coboy%20Style%20Pin%20Buckle%203_8cm%20Width%20For%20Everyday%20Business%20Casual%20%C3%A2%C2%80%C2%94%20Dark%20_%20KIMLUD%20-%20light%20brown%20_%20120cm.jpg"
+  },
+  {
+    id:10, name:"Slim Black Wallet", cat:"Wallets", price:449,
+    desc:"A practical everyday essential.",
+    img:"https://images.unsplash.com/photo-1627123424574-724758594e93?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    id:11, name:"Everyday Backpack", cat:"Bags", price:1099,
+    desc:"Carry your essentials in style.",
+    img:"https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    id:12, name:"Urban Sling Bag", cat:"Bags", price:799,
+    desc:"A compact bag for everyday travel.",
+    img:"https://images.unsplash.com/photo-1622560480654-d96214fdc887?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    id:13, name:"Wireless Earbuds", cat:"Tech", price:999,
+    desc:"Compact audio accessories for daily use.",
+    img:"https://images.unsplash.com/photo-1606220945770-b5b6c2c55bf1?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    id:14, name:"Over-Ear Headphones", cat:"Tech", price:1499,
+    desc:"A stylish choice for music lovers.",
+    img:"https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    id:15, name:"Protective Phone Case", cat:"Tech", price:299,
+    desc:"A simple accessory for your phone.",
+    img:"https://images.unsplash.com/photo-1603313011101-320f26a4f6f6?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    id:16, name:"Metal Keychain", cat:"Other", price:149,
+    desc:"A small accessory for your keys.",
+    img:"https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    id:17, name:"Classic Beanie", cat:"Caps", price:349,
+    desc:"A casual finishing touch.",
+    img:"https://images.unsplash.com/photo-1576871337622-98d48d1cf531?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    id:18, name:"Sport Sunglasses", cat:"Sunglasses", price:699,
+    desc:"Sport-inspired frames for outdoor looks.",
+    img:"https://images.unsplash.com/photo-1572635196237-14b3f281503f?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    id:19, name:"Silver Cufflinks", cat:"Other", price:499,
+    desc:"A polished finishing touch for formalwear.",
+    img:"https://images.unsplash.com/photo-1615655406736-b37c4fabf923?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    id:21, name:"Brown Leather Watch", cat:"Watches", price:1199,
+    desc:"A refined watch with a warm leather-look strap.",
+    img:"https://images.unsplash.com/photo-1524592094714-0f0654e20314?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    id:22, name:"Round Frame Sunglasses", cat:"Sunglasses", price:649,
+    desc:"A timeless frame for sunny days.",
+    img:"https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=600&q=80&sat=-80"
+  },
+  {
+    id:23, name:"Canvas Weekender Bag", cat:"Bags", price:1299,
+    desc:"A roomy bag for weekends and short trips.",
+    img:"https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=600&q=80&sat=-50"
+  },
+  {
+    id:24, name:"Woven Leather Wallet", cat:"Wallets", price:549,
+    desc:"A compact wallet with a classic finish.",
+    img:"https://images.unsplash.com/photo-1627123424574-724758594e93?auto=format&fit=crop&w=600&q=80&sat=-70"
+  },
+  {
+    id:25, name:"Matte Black Signet Ring", cat:"Rings", price:329,
+    desc:"A bold ring that completes a clean look.",
+    img:"https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=600&q=80&sat=-100"
+  },
+  {
+    id:26, name:"Everyday Knit Beanie", cat:"Caps", price:379,
+    desc:"A comfortable layer for cooler days.",
+    img:"https://images.unsplash.com/photo-1576871337622-98d48d1cf531?auto=format&fit=crop&w=600&q=80&sat=-60"
+  },
+  {
+    id:27, name:"Adidas Grand Court Sneakers", cat:"Shoes", price:2499,
+    desc:"A clean, court-inspired sneaker for everyday outfits.",
+    img:"https://uploads.onecompiler.io/44sc8s8uy/1791524008274/219339444343297955.jpg"
+  },
+  {
+    id:28, name:"Nike Air Max Style Sneakers", cat:"Shoes", price:3299,
+    desc:"A sporty, cushioned-look sneaker for casual wear.",
+    img:"https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    id:29, name:"Puma Running Shoes", cat:"Shoes", price:2799,
+    desc:"Lightweight, sporty shoes for active days.",
+    img:"https://images.unsplash.com/photo-1608231387042-66d1773070a5?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    id:30, name:"Patent Finish Sneakers", cat:"Shoes", price:2199,
+    desc:"A sleek pair of sneakers with a polished finish.",
+    img:"https://uploads.onecompiler.io/44sc8s8uy/1791524146470/Patent%20Shoes%20Sneakers%20For%20Men%20on%20Flipkart.jpg"
+  },
+  {
+    id:31, name:"New Balance 480 Trainers", cat:"Shoes", price:3499,
+    desc:"Classic court-inspired trainers in white and green.",
+    img:"https://uploads.onecompiler.io/44sc8s8uy/1791524142994/New%20Balance%20480%20Trainer%20White_Green%20-%204.jpg"
+  },
+  {
+    id:32, name:"Men's Casual Sneakers", cat:"Shoes", price:2499,
+    desc:"Versatile sneakers for everyday outfits.",
+    img:"https://uploads.onecompiler.io/44sc8s8uy/1791524138566/Men's%20Shoes%20&%20Sneakers.jpg"
+  },
+  {
+    id:33, name:"Argentina Adidas Jersey", cat:"Football Jerseys", price:499,
+    desc:"A lightweight jersey for match days and casual wear.",
+    img:"https://uploads.onecompiler.io/44sc8s8uy/1791524325348/2026%20adidas%20Argentina%20Lionel%20Messi%20Farewell%20Jersey.jpg"
+  },
+  {
+    id:34, name:"FC Barcelona Football Jersey", cat:"Football Jerseys", price:499,
+    desc:"A sporty blue jersey for training or supporting your team.",
+    img:"https://uploads.onecompiler.io/44sc8s8uy/1791524406789/equipaci%C3%83%C2%B3n%20f%C3%83%C2%BAtbol%20Club%20Barcelona%20(1_2).jpg"
+  },
+  {
+    id:35, name:"Arsenal FC Jersey", cat:"Football Jerseys", price:499,
+    desc:"A clean black football jersey with an athletic fit.",
+    img:"https://uploads.onecompiler.io/44sc8s8uy/1791524508294/ARSENAL%202026_2027%20HOMS%20KIT.jpg"
+  }
+];
+
+let selectedCategory = "All";
+let cart = [];
+
+const productGrid = document.getElementById("product-grid");
+const searchInput = document.getElementById("search-input");
+const sortSelect = document.getElementById("sort-select");
+
+function money(value) {
+  return "₹" + value.toLocaleString("en-IN");
+}
+
+function renderProducts() {
+  const query = searchInput.value.trim().toLowerCase();
+
+  let filtered = products.filter(product => {
+    const matchesCategory =
+      selectedCategory === "All" || product.cat === selectedCategory;
+
+    const matchesSearch =
+      product.name.toLowerCase().includes(query) ||
+      product.cat.toLowerCase().includes(query) ||
+      product.desc.toLowerCase().includes(query);
+
+    return matchesCategory && matchesSearch;
+  });
+
+  if (sortSelect.value === "low-high") {
+    filtered.sort((a,b) => a.price - b.price);
+  } else if (sortSelect.value === "high-low") {
+    filtered.sort((a,b) => b.price - a.price);
+  } else if (sortSelect.value === "name") {
+    filtered.sort((a,b) => a.name.localeCompare(b.name));
+  }
+
+  if (!filtered.length) {
+    productGrid.innerHTML =
+      '<p class="empty-message">No products found. Try another search.</p>';
+    return;
+  }
+
+  productGrid.innerHTML = filtered.map(product => `
+    <article class="product-card">
+      <div class="product-image">
+        <span class="product-tag">${product.cat}</span>
+        <img
+          src="${product.img}"
+          alt="${product.name}"
+          loading="lazy"
+          onerror="this.onerror=null;this.src='https://placehold.co/600x675/f0e8da/333333?text=ELVORA';">
+      </div>
+
+      <div class="product-info">
+        <div class="product-category">${product.cat}</div>
+        <h3>${product.name}</h3>
+        <p class="product-description">${product.desc}</p>
+        <div class="product-bottom">
+          <span class="price">${money(product.price)}</span>
+          <button class="add-button" onclick="addToCart(${product.id})">
+            + ADD
+          </button>
+        </div>
+      </div>
+    </article>
+  `).join("");
+}
+
+document.querySelectorAll(".category-button").forEach(button => {
+  button.addEventListener("click", () => {
+    document.querySelectorAll(".category-button").forEach(item =>
+      item.classList.remove("active")
+    );
+
+    button.classList.add("active");
+    selectedCategory = button.dataset.category;
+    renderProducts();
+  });
+});
+
+searchInput.addEventListener("input", renderProducts);
+sortSelect.addEventListener("change", renderProducts);
+
+function addToCart(id) {
+  const product = products.find(item => item.id === id);
+  if (!product) return;
+
+  const existing = cart.find(item => item.id === id);
+
+  if (existing) {
+    existing.quantity++;
+  } else {
+    cart.push({...product, quantity:1});
+  }
+
+  renderCart();
+  showToast(product.name + " added to your bag!");
+}
+
+function changeQuantity(id, amount) {
+  const item = cart.find(product => product.id === id);
+  if (!item) return;
+
+  item.quantity += amount;
+
+  if (item.quantity <= 0) {
+    cart = cart.filter(product => product.id !== id);
+  }
+
+  renderCart();
+}
+
+function removeFromCart(id) {
+  cart = cart.filter(item => item.id !== id);
+  renderCart();
+  showToast("Item removed from your bag.");
+}
+
+function renderCart() {
+  const count = cart.reduce((sum,item) => sum + item.quantity,0);
+  const total = cart.reduce((sum,item) => sum + item.price * item.quantity,0);
+
+  document.getElementById("cart-count").textContent = count;
+  document.getElementById("cart-total").textContent = money(total);
+
+  const container = document.getElementById("cart-items");
+
+  if (!cart.length) {
+    container.innerHTML =
+      '<p class="empty-message">Your bag is empty. Explore our collection!</p>';
+    return;
+  }
+
+  container.innerHTML = cart.map(item => `
+    <div class="cart-row">
+      <div>
+        <h4>${item.name}</h4>
+        <small>${money(item.price)} each</small>
+      </div>
+
+      <div class="quantity-control">
+        <button onclick="changeQuantity(${item.id},-1)">−</button>
+        <span>${item.quantity}</span>
+        <button onclick="changeQuantity(${item.id},1)">+</button>
+      </div>
+
+      <strong class="line-total">${money(item.price * item.quantity)}</strong>
+
+      <button class="remove-button" onclick="removeFromCart(${item.id})">
+        Remove
+      </button>
+    </div>
+  `).join("");
+}
+
+function goToCart() {
+  document.getElementById("cart").scrollIntoView({behavior:"smooth"});
+}
+
+function escapeHtml(value) {
+  return String(value).replace(/[&<>"']/g, character => ({
+    "&":"&amp;",
+    "<":"&lt;",
+    ">":"&gt;",
+    "\"":"&quot;",
+    "'":"&#39;"
+  })[character]);
+}
+
+function printBill() {
+  if (!cart.length) {
+    showToast("Your bag is empty. Add a product first.");
+    return;
+  }
+
+  const customerName = document.getElementById("customer-name").value.trim() || "—";
+  const phone = document.getElementById("customer-phone").value.trim() || "—";
+  const email = document.getElementById("customer-email").value.trim() || "—";
+  const billingAddress = billingSameCheckbox.checked
+    ? [
+        document.getElementById("customer-address").value.trim(),
+        document.getElementById("customer-city").value.trim()
+      ].filter(Boolean).join(", ")
+    : [
+        document.getElementById("billing-address").value.trim(),
+        document.getElementById("billing-city").value.trim(),
+        document.getElementById("billing-postal").value.trim()
+      ].filter(Boolean).join(", ");
+  const total = cart.reduce((sum,item) => sum + item.price * item.quantity,0);
+  const rows = cart.map(item => `
+    <tr>
+      <td>${escapeHtml(item.name)}</td>
+      <td>${item.quantity}</td>
+      <td>${money(item.price)}</td>
+      <td>${money(item.price * item.quantity)}</td>
+    </tr>
+  `).join("");
+
+  document.getElementById("print-bill").innerHTML = `
+    <h1>ELVORA</h1>
+    <p class="bill-subtitle">Men's Accessories · Bill / Order Summary</p>
+    <p><strong>Date:</strong> ${new Date().toLocaleDateString("en-IN")}</p>
+    <div class="bill-details">
+      <strong>Bill to:</strong> ${escapeHtml(customerName)}<br>
+      <strong>Phone:</strong> ${escapeHtml(phone)}<br>
+      <strong>Email:</strong> ${escapeHtml(email)}<br>
+      <strong>Billing address:</strong> ${escapeHtml(billingAddress || "—")}
+    </div>
+    <table>
+      <thead><tr><th>Item</th><th>Qty</th><th>Price</th><th>Amount</th></tr></thead>
+      <tbody>${rows}</tbody>
+    </table>
+    <p class="bill-total">Total: ${money(total)}</p>
+    <p class="bill-subtitle">Sample bill only. No payment has been processed.</p>
+  `;
+
+  window.print();
+}
+
+let toastTimer;
+
+function showToast(message) {
+  const toast = document.getElementById("toast");
+  toast.textContent = message;
+  toast.style.display = "block";
+
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => {
+    toast.style.display = "none";
+  },2500);
+}
+
+const billingSameCheckbox = document.getElementById("billing-same");
+const billingFields = document.getElementById("billing-fields");
+const billingInputs = billingFields.querySelectorAll("input");
+
+function updateBillingFields() {
+  const useDeliveryAddress = billingSameCheckbox.checked;
+  billingFields.hidden = useDeliveryAddress;
+  billingInputs.forEach(input => {
+    input.required = !useDeliveryAddress;
+  });
+}
+
+billingSameCheckbox.addEventListener("change", updateBillingFields);
+updateBillingFields();
+
+// Demo checkout: no real order is sent.
+document.getElementById("checkout-form").addEventListener("submit", event => {
+  event.preventDefault();
+
+  if (!cart.length) {
+    showToast("Your bag is empty. Add a product first.");
+    goToCart();
+    return;
+  }
+
+  const name = document.getElementById("customer-name").value.trim();
+  const billingAddress = billingSameCheckbox.checked
+    ? document.getElementById("customer-address").value.trim() + ", " +
+      document.getElementById("customer-city").value.trim()
+    : document.getElementById("billing-address").value.trim() + ", " +
+      document.getElementById("billing-city").value.trim() + " " +
+      document.getElementById("billing-postal").value.trim();
+  const total = cart.reduce((sum,item) => sum + item.price * item.quantity,0);
+  const count = cart.reduce((sum,item) => sum + item.quantity,0);
+
+  alert(
+    "Demo checkout completed!\n\n" +
+    "Thank you, " + name + "!\n" +
+    "Items: " + count + "\n" +
+    "Billing address: " + billingAddress + "\n" +
+    "Total: " + money(total) + "\n\n" +
+    "This is a demo only. No order was sent and no payment was taken."
+  );
+});
+
+document.getElementById("year").textContent = new Date().getFullYear();
+
+renderProducts();
+renderCart();
+</script>
+
+</body>
+</html>
